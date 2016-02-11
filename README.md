@@ -22,9 +22,9 @@ bower install angular-kolor-picker
 * [kolor-picker](https://github.com/emn178/kolor-picker)  
 
 ## Usage
-Add the ngMarquee module as a dependency to your application module:
+Add the ngKolorPicker module as a dependency to your application module:
 ```JavaScript
-var myAppModule = angular.module('MyApp', ['ngMarquee'])
+var myAppModule = angular.module('MyApp', ['ngKolorPicker'])
 ```
 
 ## ngKolorPicker
