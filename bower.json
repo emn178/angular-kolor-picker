@@ -1,0 +1,14 @@
+{
+  "name": "angular-kolor-picker",
+  "version": "0.1.0",
+  "main": ["src/angular-kolor-picker.js"],
+  "ignore": [
+    "samples"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.6",
+    "angular": ">= 1.2.6",
+    "kolor-picker": ">= 0.1.0",
+    "color-sampler": ">= 0.1.3"
+  }
+}
