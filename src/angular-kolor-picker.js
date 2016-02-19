@@ -1,7 +1,7 @@
 /**
  * [angular-kolor-picker]{@link https://github.com/emn178/angular-kolor-picker}
  *
- * @version 0.1.0
+ * @version 0.1.1
  * @author Yi-Cyuan Chen [emn178@gmail.com]
  * @copyright Yi-Cyuan Chen 2016
  * @license MIT
@@ -11,7 +11,7 @@
 
   var KEY = 'angular-kolor-picker';
 
-  function wrapCallback(scope, callback) {
+  function wrapCallback(scope, callback, selected) {
     if (angular.isFunction(callback)) {
       return function () {
         var self = this;
@@ -45,7 +45,16 @@
       },
       link: function (scope, element) {
         var options = scope.options || {};
-        options.onSelect = wrapCallback(scope, options.onSelect);
+        var callback = options.onSelect;
+        options.onSelect = function (color) {
+          var self = this;
+          scope.$apply(function () {
+            scope.ngModel = color;
+            if (angular.isFunction(callback)) {
+              callback.call(self, color);
+            }
+          });
+        };
         options.onChange = wrapCallback(scope, options.onChange);
         var id = element.attr('id');
         if (!id) {

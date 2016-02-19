@@ -1,6 +1,6 @@
 {
   "name": "angular-kolor-picker",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": ["src/angular-kolor-picker.js"],
   "ignore": [
     "samples"

@@ -1,6 +1,9 @@
 # angular-kolor-picker
 A tinyColorPicker plugin provides sampler function for Canvas.
 
+## Demo
+[Demo](http://emn178.github.io/angular-kolor-picker/samples/demo/)
+
 ## Download
 [Compress JS](https://raw.github.com/emn178/angular-kolor-picker/master/build/angular-kolor-picker.min.js)  
 [Uncompress JS](https://raw.github.com/emn178/angular-kolor-picker/master/src/angular-kolor-picker.js)
@@ -10,9 +13,6 @@ You can also install angular-kolor-picker by using Bower.
 ```
 bower install angular-kolor-picker
 ```
-
-## Demo
-[Demo](http://emn178.github.io/angular-kolor-picker/samples/demo/)
 
 ## Requirements
 * [jQuery](http://jquery.com/)  
@@ -37,17 +37,18 @@ This directive executes at priority level 0.
 as attribute:
 ```HTML
 <div
-  ng-kolor-picker="YOUR_OPTIONS">
+  ng-kolor-picker="YOUR_OPTIONS" ng-model>
 ```
 ### Arguments
 | Param | Type | Details |
 |:-----|:-------|-------|
 |ngKolorPicker   |expression     |Expression to specify custom options to kolor-picker.    |
+|ngModel   |expression     |Binding color to model.    |
 
 ### Example
 ```HTML
 <input
-  ng-kolor-picker="{doRender: false, opacity: false}">
+  ng-kolor-picker="{doRender: false, opacity: false}" ng-model="color">
 ```
 [See also](https://github.com/PitPik/tinyColorPicker#jqcolorpickerjs).
 
@@ -56,4 +57,4 @@ The project is released under the [MIT license](http://www.opensource.org/licens
 
 ## Contact
 The project's website is located at https://github.com/emn178/angular-kolor-picker  
-Author: emn178@gmail.com
+Author: Yi-Cyuan Chen (emn178@gmail.com)
