@@ -1,7 +1,7 @@
 /**
  * [angular-kolor-picker]{@link https://github.com/emn178/angular-kolor-picker}
  *
- * @version 0.1.1
+ * @version 0.1.2
  * @author Yi-Cyuan Chen [emn178@gmail.com]
  * @copyright Yi-Cyuan Chen 2016
  * @license MIT
@@ -11,15 +11,19 @@
 
   var KEY = 'angular-kolor-picker';
 
-  function wrapCallback(scope, callback, selected) {
-    if (angular.isFunction(callback)) {
-      return function () {
+  function wrapCallback(scope, callback, doRender) {
+    if (doRender || angular.isFunction(callback)) {
+      return function (color) {
         var self = this;
-        var args = Array.prototype.slice.call(arguments, 0);
         scope.$apply(function () {
-          callback.apply(self, args);
+          if (doRender) {
+            scope.ngModel = color;
+          }
+          if (angular.isFunction(callback)) {
+            callback.call(self, args);
+          }
         });
-      };
+      }
     } else {
       return callback;
     }
@@ -46,16 +50,8 @@
       link: function (scope, element) {
         var options = scope.options || {};
         var callback = options.onSelect;
-        options.onSelect = function (color) {
-          var self = this;
-          scope.$apply(function () {
-            scope.ngModel = color;
-            if (angular.isFunction(callback)) {
-              callback.call(self, color);
-            }
-          });
-        };
-        options.onChange = wrapCallback(scope, options.onChange);
+        options.onSelect = wrapCallback(scope, options.onSelect, true);
+        options.onChange = wrapCallback(scope, options.onChange, options.doRender != false);
         var id = element.attr('id');
         if (!id) {
           id = generateId();
