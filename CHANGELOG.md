@@ -1,3 +1,7 @@
+# v0.1.3 / 2016-02-29
+
+Fixed error when onChange event set.
+
 # v0.1.2 / 2016-02-19
 
 Added ngModel binding in onChange when doRender is true.

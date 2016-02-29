@@ -1,7 +1,7 @@
 /**
  * [angular-kolor-picker]{@link https://github.com/emn178/angular-kolor-picker}
  *
- * @version 0.1.2
+ * @version 0.1.3
  * @author Yi-Cyuan Chen [emn178@gmail.com]
  * @copyright Yi-Cyuan Chen 2016
  * @license MIT
@@ -15,6 +15,7 @@
     if (doRender || angular.isFunction(callback)) {
       return function (color) {
         var self = this;
+        var args = Array.prototype.slice.call(arguments, 0);
         scope.$apply(function () {
           if (doRender) {
             scope.ngModel = color;
