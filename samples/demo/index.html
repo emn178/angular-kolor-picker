@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-  <script src="https://cdn.rawgit.com/PitPik/tinyColorPicker/ab98e7966a9111971c182b77f38dcb24f23118c4/jqColorPicker.min.js"></script>
+  <script src="https://cdn.rawgit.com/PitPik/tinyColorPicker/6d4af8d7b87007007104e4b04313399455635f4f/jqColorPicker.min.js"></script>
   <script src="https://cdn.rawgit.com/emn178/color-sampler/master/build/color-sampler.min.js"></script>
   <script src="https://cdn.rawgit.com/emn178/kolor-picker/master/build/kolor-picker.min.js"></script>
   <script src="../../src/angular-kolor-picker.js"></script>
@@ -57,13 +57,13 @@
     var canvas = document.getElementById("canvas");
     var context = canvas.getContext("2d");
     var img = new Image();
-    img.onload = function() {
+    img.onload = function () {
       context.drawImage(this, 0, 0);
     };
     img.src = "superman.jpg";
 
     angular.module('demo', ['ngKolorPicker'])
-    .controller('DemoCtrl', ['$scope', function($scope) {
+    .controller('DemoCtrl', ['$scope', function ($scope) {
       $scope.color = 'white';
 
       $scope.options = {

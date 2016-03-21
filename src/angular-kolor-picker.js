@@ -1,9 +1,9 @@
 /**
  * [angular-kolor-picker]{@link https://github.com/emn178/angular-kolor-picker}
  *
- * @version 0.1.3
- * @author Yi-Cyuan Chen [emn178@gmail.com]
- * @copyright Yi-Cyuan Chen 2016
+ * @version 0.1.4
+ * @author Chen, Yi-Cyuan [emn178@gmail.com]
+ * @copyright Chen, Yi-Cyuan 2016
  * @license MIT
  */
 (function (angular) {
@@ -30,16 +30,6 @@
     }
   }
 
-  function generateId() {
-    var timestamp = new Date().getTime()
-    var id = KEY + '_' + timestamp
-    while (angular.element('#' + id).length) {
-      ++timestamp;
-      id = KEY + '_' + timestamp;
-    }
-    return id;
-  }
-
   angular.module('ngKolorPicker', [])
   .directive('ngKolorPicker', function () {
     return {
@@ -53,12 +43,7 @@
         var callback = options.onSelect;
         options.onSelect = wrapCallback(scope, options.onSelect, true);
         options.onChange = wrapCallback(scope, options.onChange, options.doRender != false);
-        var id = element.attr('id');
-        if (!id) {
-          id = generateId();
-          element.attr('id', id);
-        }
-        angular.element('#' + id).kolorPicker(options);
+        element.kolorPicker(options);
       }
     };
   });

@@ -1,3 +1,7 @@
+# v0.1.4 / 2016-03-21
+
+Removed generateId workaround (need to update tinyColorPicker).
+
 # v0.1.3 / 2016-02-29
 
 Fixed error when onChange event set.
