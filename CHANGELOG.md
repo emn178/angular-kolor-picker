@@ -1,3 +1,7 @@
+# v0.1.5 / 2016-03-21
+
+Fixed event arguments passing.
+
 # v0.1.4 / 2016-03-21
 
 Removed generateId workaround (need to update tinyColorPicker).
